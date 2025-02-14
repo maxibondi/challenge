@@ -107,8 +107,8 @@ export const Buscar_pelicula = async (titulo) => {
       page++; // Aumentamos el número de página
 
       // Detenemos si hemos alcanzado el máximo de 150 resultados
-      if (allMoviesAndSeries.length >= 150) {
-        allMoviesAndSeries = allMoviesAndSeries.slice(0, 150); // Limitar a 150 resultados
+      if (allMoviesAndSeries.length >= 40) {
+        allMoviesAndSeries = allMoviesAndSeries.slice(0, 40); // Limitar a 150 resultados
         break;
       }
 
