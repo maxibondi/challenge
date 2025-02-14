@@ -1,0 +1,93 @@
+@use "../base/variables" as *;
+.movie-card {
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  height: 340px; // Establece una altura fija para todas las tarjetas
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &__image {
+      width: 100%;
+      border-radius: 20px;
+  }
+
+  &__title {
+      font-size: 16px;
+      
+      margin-top: 8px;
+      height: 40px; // Fijar una altura para que todos los títulos ocupen el mismo espacio
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
+
+  &__year {
+      font-size: 14px;
+
+  }
+
+  // **Media query para tabletas y móviles en horizontal**
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 300px;
+
+    &__title {
+      font-size: 14px;
+      height: 35px;
+    }
+
+    &__year {
+      font-size: 12px;
+    }
+  }
+
+  // **Media query para móviles pequeños**
+  @media (max-width: 480px) {
+    width: 130px;
+    height: 280px;
+
+    &__title {
+      font-size: 12px;
+      height: 30px;
+    }
+
+    &__year {
+      font-size: 10px;
+    }
+  }
+}
+
+// **Modo oscuro**
+body.dark-mode .movie-card {
+  background-color: $text-color;
+
+  &__title {
+    color: $text-color2;
+  }
+
+  &__year {
+    color: $text-color2;
+  }
+}
+
+// **Modo claro**
+body:not(.dark-mode) .movie-card {
+  background-color: $text-color2;
+  color: #000;
+
+  &__title {
+      color: $text-color;
+  }
+
+  &__year {
+      color: $text-color;
+  }
+}
+
+
+
+  

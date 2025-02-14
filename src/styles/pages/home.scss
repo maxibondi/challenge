@@ -1,0 +1,61 @@
+@use "../base/variables" as *;
+
+.home {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Centra los elementos horizontalmente
+  justify-content: center; // Centra los elementos verticalmente
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  &__movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));  // 220px es el tamaño mínimo de las cards, puedes ajustarlo si quieres más grandes
+    gap: 20px; // Mantén una separación fija entre las cards
+    justify-items: center; // Centra los elementos en la cuadrícula horizontalmente
+    align-items: center; // Centra los elementos en la cuadrícula verticalmente
+    width: 100%; // Asegura que la cuadrícula ocupe todo el ancho disponible
+    padding: 0 20px; // Añade un padding horizontal para mantener separación lateral
+  }
+
+  @media (max-width: 768px) {
+    &__movies {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));  // 180px para pantallas medianas
+      padding: 0 10px; // Reduce el padding lateral en pantallas medianas
+    }
+  }
+
+  @media (max-width: 500px) {
+    &__movies {
+      grid-template-columns: repeat(2, 1fr);  // 2 cards por fila en pantallas pequeñas
+      padding: 0 5px; // Reduce el padding lateral en pantallas pequeñas
+    }
+  }
+}
+
+// **Modo oscuro**
+body.dark-mode .home {
+
+
+  &__title {
+    color: $text-color
+  }
+}
+
+// **Modo claro**
+body:not(.dark-mode) .home {
+
+
+
+  &__title {
+    color: $text-color2
+  }
+}
+
+

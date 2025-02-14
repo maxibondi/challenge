@@ -1,0 +1,111 @@
+@use "../base/variables" as *;
+
+.movie-carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  &__wrapper {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__content {
+    display: flex;
+    width: max-content;
+  }
+
+  &__item {
+    flex: 0 0 auto; // Cada ítem es flexible
+    margin-right: 10px;
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+// 🎬 Animación para pantallas grandes (PC)
+@keyframes scrollLeftRightDesktop {
+  0% {
+    transform: translateX(20%);
+  }
+  50% {
+    transform: translateX(-20%);
+  }
+ 
+  100% {
+    transform: translateX(20%);
+  }
+}
+
+// 🎬 Animación para dispositivos móviles
+@keyframes scrollLeftRightMobile {
+  0% {
+    transform: translateX(45%);
+  }
+  50% {
+    transform: translateX(-45%);
+  }
+
+  100% {
+    transform: translateX(45%);
+  }
+}
+
+// 📱 Responsividad
+@media (max-width: 768px) {
+  .movie-carousel__content {
+    animation: scrollLeftRightMobile 60s linear infinite;
+  }
+
+  .movie-carousel__item {
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: 769px) {
+  .movie-carousel__content {
+    animation: scrollLeftRightDesktop 60s linear infinite;
+  }
+
+  .movie-carousel__item {
+    margin-right: 10px;
+  }
+}
+
+// **Modo oscuro**
+body.dark-mode .movie-carousel {
+
+
+  &__title {
+    color: $text-color;
+  }
+
+
+}
+
+// **Modo claro**
+body:not(.dark-mode) .movie-carousel {
+
+
+  &__title {
+      color: $text-color2;
+  }
+
+
+}
+
+
+

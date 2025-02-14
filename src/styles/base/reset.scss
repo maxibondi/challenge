@@ -1,0 +1,13 @@
+@use "variables" as *; // Importar variables correctamente
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary-color;
+  color: $text-color;
+  font-family: $font-stack;
+}

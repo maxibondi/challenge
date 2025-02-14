@@ -1,0 +1,96 @@
+@use "sass:color"; // Importa el módulo de colores de Sass
+@use "../base/variables" as *;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: background-color 0.3s ease;
+
+  &__logo {
+    color: $secondary-color;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  &__search {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+
+    &-input {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.5rem;
+      border: 1px solid color.adjust($secondary-color, $lightness: 20%);
+      border-radius: 4px;
+      background-color: transparent;
+      color: white;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      &:focus {
+        border-color: color.adjust($secondary-color, $lightness: 30%);
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  &__toggle-theme {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #000;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px;
+
+    &.light-mode {
+      background-color: #fff;
+      color: #000;
+    }
+
+    &.dark-mode {
+      background-color: #000;
+      color: #fff;
+    }
+
+    &:hover {
+      background-color: color.adjust(#2e4b08, $lightness: 10%);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &__search {
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    &__toggle-theme {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+}

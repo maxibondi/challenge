@@ -1,0 +1,34 @@
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .botones__button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #5a8550; /* Color vibrante */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    
+    &:hover {
+      background-color: #24aa57; /* Color más oscuro en hover */
+      transform: scale(1.1); /* Agrandar ligeramente el botón */
+    }
+  
+    &:disabled {
+      background-color: #f78d8d;
+      cursor: not-allowed;
+    }
+  }
+  
+  .botones__pageInfo {
+    font-size: 18px;
+    color: #2ba5a5;
+  }

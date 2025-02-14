@@ -1,0 +1,120 @@
+.movie-details-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.movie-details-modal__content {
+  background: rgb(0, 0, 0);
+  padding: 20px;
+  width: 100%;
+  max-width: 600px; /* Reducimos el tamaño para que no se vea tan grande en PC */
+  max-height: 90vh; /* Evita que el modal sea demasiado alto */
+  text-align: center;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: auto; /* Centra el modal correctamente */
+  overflow-y: auto; /* Permite hacer scroll si el contenido es muy grande */
+}
+
+.movie-details-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: red;
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.movie-details-modal__close:hover {
+  color: #ffcccc;
+}
+
+.movie-details-modal__image {
+  width: 100%;
+  max-width: 400px; /* Reducimos la imagen también */
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.movie-details-modal__title {
+  font-size: 26px; /* Reducimos el título */
+  margin-top: 15px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.movie-details-modal__plot {
+  font-size: 17px;
+  margin-top: 15px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.movie-details-modal__rating {
+  font-size: 18px;
+  margin-top: 15px;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .movie-details-modal__content {
+    padding: 15px;
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .movie-details-modal__title {
+    font-size: 22px;
+  }
+
+  .movie-details-modal__plot {
+    font-size: 16px;
+  }
+
+  .movie-details-modal__rating {
+    font-size: 18px;
+  }
+
+  .movie-details-modal__image {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-details-modal__content {
+    padding: 10px;
+    width: 95%;
+    max-width: 400px;
+  }
+
+  .movie-details-modal__title {
+    font-size: 20px;
+  }
+
+  .movie-details-modal__plot {
+    font-size: 14px;
+  }
+
+  .movie-details-modal__rating {
+    font-size: 16px;
+  }
+
+  .movie-details-modal__image {
+    max-width: 250px;
+  }
+}
+

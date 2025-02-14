@@ -1,0 +1,68 @@
+@use "../base/variables" as *;
+.carrusel-card {
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    height: 340px; // Establece una altura fija para todas las tarjetas
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &__image {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    &__title {
+        font-size: 16px;
+        
+        margin-top: 8px;
+        height: 40px; // Fijar una altura para que todos los títulos ocupen el mismo espacio
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__year {
+        font-size: 14px;
+
+    }
+}
+
+// **Modo oscuro**
+body.dark-mode .carrusel-card {
+    background-color: $text-color;
+
+
+    &__title {
+        color: $text-color2;
+
+    }
+
+    &__year {
+        color: $text-color2;
+
+    }
+}
+
+// **Modo claro**
+body:not(.dark-mode) .carrusel-card {
+    background-color: $text-color2;
+
+    
+
+    &__title {
+        color: $text-color;
+
+    }
+
+    &__year {
+        color: $text-color;
+
+    }
+}
+
+  
+  

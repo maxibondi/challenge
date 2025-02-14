@@ -1,0 +1,37 @@
+// Definir colores base
+$primary-color: #eeeeee;
+$secondary-color: #000000;
+
+// Modo claro
+body {
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
+// Modo oscuro
+body.dark-mode {
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+// Estilos para componentes
+.navbar {
+  background-color: #f8f8f8;
+  padding: 10px;
+  
+  &__toggle-theme {
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+// Modo oscuro para Navbar
+body.dark-mode .navbar {
+  background-color: #333;
+
+  .navbar__toggle-theme {
+    background-color: #555;
+    color: white;
+  }
+}
