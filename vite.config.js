@@ -1,10 +1,9 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [react()],
-  server: {
-    host: '0.0.0.0',  // Permite el acceso desde cualquier IP
+  base: "./", // Asegura que los assets se carguen bien en producción
+  server: command === "serve" ? { host: "0.0.0.0" } : undefined
+}));
 
-  }
-})
